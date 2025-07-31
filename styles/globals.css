@@ -1,0 +1,598 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-foreground: #ffffff;
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1a1a1a;
+  --muted-foreground: #94a3b8;
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --input-background: #1a1a1a;
+  --switch-background: #2a2a2a;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #10b981;
+  --chart-1: #10b981;
+  --chart-2: #059669;
+  --chart-3: #047857;
+  --chart-4: #065f46;
+  --chart-5: #064e3b;
+  --radius: 0.625rem;
+  --sidebar: #111111;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #10b981;
+
+  /* Green Banking Theme Colors */
+  --emerald-50: #ecfdf5;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+  --forest-900: #0d2818;
+  --forest-950: #081b11;
+  --banking-gold: #d4af37;
+  --banking-gold-light: #f4e4a6;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-foreground: #ffffff;
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1a1a1a;
+  --muted-foreground: #94a3b8;
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: #10b981;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #10b981;
+  --chart-2: #059669;
+  --chart-3: #047857;
+  --chart-4: #065f46;
+  --chart-5: #064e3b;
+  --sidebar: #111111;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #10b981;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Enhanced green banking fintech pattern */
+.fintech-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 0%, rgba(4, 120, 87, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(16, 185, 129, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(5, 150, 105, 0.05) 25%, transparent 25%);
+  background-size: 60px 60px, 60px 60px, 120px 120px, 30px 30px, 30px 30px;
+  background-position: 0 0, 30px 30px, 60px 60px, 0 0, 15px 15px;
+  animation: patternShift 25s linear infinite;
+}
+
+@keyframes patternShift {
+  0% { background-position: 0 0, 30px 30px, 60px 60px, 0 0, 15px 15px; }
+  100% { background-position: 60px 60px, 90px 90px, 180px 180px, 30px 30px, 45px 45px; }
+}
+
+/* Enhanced green grid pattern for sections */
+.dark-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.02) 0%, transparent 50%);
+  background-size: 50px 50px, 50px 50px, 100px 100px;
+  animation: gridFloat 20s ease-in-out infinite;
+}
+
+@keyframes gridFloat {
+  0%, 100% { background-position: 0 0, 0 0, 0 0; }
+  33% { background-position: 25px 25px, 25px 25px, 50px 50px; }
+  66% { background-position: -25px -25px, -25px -25px, -50px -50px; }
+}
+
+/* Enhanced green glow effect with dark theme */
+.green-glow {
+  box-shadow: 
+    0 0 20px rgba(16, 185, 129, 0.4),
+    0 0 40px rgba(16, 185, 129, 0.2),
+    0 0 60px rgba(5, 150, 105, 0.1),
+    inset 0 0 20px rgba(16, 185, 129, 0.05);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(16, 185, 129, 0.4),
+      0 0 40px rgba(16, 185, 129, 0.2),
+      0 0 60px rgba(5, 150, 105, 0.1),
+      inset 0 0 20px rgba(16, 185, 129, 0.05);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(16, 185, 129, 0.6),
+      0 0 60px rgba(16, 185, 129, 0.3),
+      0 0 80px rgba(5, 150, 105, 0.2),
+      inset 0 0 30px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* Animated green border with dark theme */
+.animated-border {
+  position: relative;
+  background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+  background-size: 400% 400%;
+  animation: gradientShift 4s ease infinite;
+  border: 1px solid transparent;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(45deg, 
+    rgba(16, 185, 129, 0.6), 
+    rgba(5, 150, 105, 0.6), 
+    rgba(4, 120, 87, 0.6),
+    rgba(16, 185, 129, 0.6)
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: borderRotate 6s linear infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced text glow effects for green banking theme */
+.text-glow {
+  text-shadow: 
+    0 0 10px rgba(16, 185, 129, 0.6),
+    0 0 20px rgba(16, 185, 129, 0.4),
+    0 0 30px rgba(16, 185, 129, 0.2),
+    0 0 40px rgba(5, 150, 105, 0.1);
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 
+      0 0 10px rgba(16, 185, 129, 0.6),
+      0 0 20px rgba(16, 185, 129, 0.4),
+      0 0 30px rgba(16, 185, 129, 0.2),
+      0 0 40px rgba(5, 150, 105, 0.1);
+  }
+  to {
+    text-shadow: 
+      0 0 15px rgba(16, 185, 129, 0.8),
+      0 0 25px rgba(16, 185, 129, 0.6),
+      0 0 35px rgba(16, 185, 129, 0.4),
+      0 0 45px rgba(5, 150, 105, 0.2);
+  }
+}
+
+/* Enhanced floating animation */
+.float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(1deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+/* Enhanced pulse glow animation for green theme */
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.8);
+    transform: scale(1.03);
+  }
+}
+
+/* Enhanced rotating gradient background for green banking */
+.rotating-gradient {
+  background: linear-gradient(45deg, 
+    #022c22, 
+    #064e3b, 
+    #065f46, 
+    #047857, 
+    #059669, 
+    #10b981, 
+    #022c22
+  );
+  background-size: 400% 400%;
+  animation: gradientRotate 12s ease infinite;
+}
+
+@keyframes gradientRotate {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced shimmer effect for green banking theme */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.1) 25%,
+    rgba(5, 150, 105, 0.2) 50%,
+    rgba(16, 185, 129, 0.1) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Enhanced aurora effect for green banking theme */
+.aurora {
+  background: 
+    radial-gradient(ellipse at top, rgba(16, 185, 129, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse at bottom, rgba(5, 150, 105, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse at center, rgba(4, 120, 87, 0.1) 0%, transparent 70%);
+  animation: aurora 15s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  0%, 100% {
+    background: 
+      radial-gradient(ellipse at top, rgba(16, 185, 129, 0.3) 0%, transparent 70%),
+      radial-gradient(ellipse at bottom, rgba(5, 150, 105, 0.2) 0%, transparent 70%),
+      radial-gradient(ellipse at center, rgba(4, 120, 87, 0.1) 0%, transparent 70%);
+  }
+  33% {
+    background: 
+      radial-gradient(ellipse at top, rgba(5, 150, 105, 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse at bottom, rgba(4, 120, 87, 0.3) 0%, transparent 70%),
+      radial-gradient(ellipse at center, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  }
+  66% {
+    background: 
+      radial-gradient(ellipse at top, rgba(4, 120, 87, 0.2) 0%, transparent 70%),
+      radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.3) 0%, transparent 70%),
+      radial-gradient(ellipse at center, rgba(5, 150, 105, 0.2) 0%, transparent 70%);
+  }
+}
+
+/* Green banking morphing background patterns */
+.morphing-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(4, 120, 87, 0.1) 0%, transparent 50%);
+  animation: morphBg 20s ease-in-out infinite;
+}
+
+@keyframes morphBg {
+  0%, 100% {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(4, 120, 87, 0.1) 0%, transparent 50%);
+  }
+  33% {
+    background: 
+      radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(4, 120, 87, 0.15) 0%, transparent 50%);
+  }
+  66% {
+    background: 
+      radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 60% 40%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(4, 120, 87, 0.2) 0%, transparent 50%);
+  }
+}
+
+/* Particle animation effects */
+.floating-particle {
+  animation: particleFloat 6s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-30px) translateX(-5px) scale(0.9);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translateY(-15px) translateX(-10px) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+/* Progress ring animations */
+.progress-ring {
+  transform-origin: center;
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.8));
+  }
+}
+
+/* Enhanced gradient text effects for green banking */
+.gradient-text {
+  background: linear-gradient(135deg, #34d399, #10b981, #059669);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientTextShift 5s ease-in-out infinite;
+}
+
+@keyframes gradientTextShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Loading animations */
+.loading-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.loading-fade.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced glow utilities for green banking */
+.glow-green {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 30px rgba(5, 150, 105, 0.5);
+}
+
+.glow-forest {
+  box-shadow: 0 0 30px rgba(4, 120, 87, 0.5);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+/* TDB Logo Watermark Animation */
+.tdb-logo-watermark {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  background-size: 40% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: logoBreath 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes logoBreath {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.03;
+  }
+  50% {
+    transform: scale(1.05) rotate(0.5deg);
+    opacity: 0.05;
+  }
+}
+
+/* Custom scrollbar for green banking theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
