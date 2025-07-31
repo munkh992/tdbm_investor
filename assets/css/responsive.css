@@ -1,0 +1,498 @@
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet Styles (768px and below) */
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-items {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .nav-items.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: var(--spacing-6);
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    animation: slideInFromTop 0.3s ease forwards;
+  }
+  
+  .nav-item {
+    padding: var(--spacing-3) 0;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  }
+  
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Hero Section */
+  .title-line-1,
+  .title-line-2 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+    padding: 0 var(--spacing-4);
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-4);
+  }
+  
+  /* Content Grid */
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  /* Bank Cards */
+  .bank-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+  }
+  
+  .bank-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+  
+  .bank-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+  
+  /* Information Cards */
+  .financial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .regulatory-info {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+  }
+  
+  .legal-links {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  /* Decorative Elements */
+  .decoration-ring-1,
+  .decoration-ring-2 {
+    display: none;
+  }
+  
+  .ambient-light-1,
+  .ambient-light-2 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Mobile Styles (480px and below) */
+@media (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+  
+  /* Navigation */
+  .nav-content {
+    height: 60px;
+  }
+  
+  .logo-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .cta-button {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    padding-top: 60px;
+    min-height: 80vh;
+  }
+  
+  .title-line-1,
+  .title-line-2 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .premium-badge {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-xs);
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-8);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-3);
+  }
+  
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: var(--spacing-12) 0;
+  }
+  
+  /* Section Headers */
+  .section-title {
+    font-size: var(--font-size-xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+  
+  .section-description {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Bank Cards */
+  .bank-cards {
+    gap: var(--spacing-3);
+  }
+  
+  .bank-link {
+    padding: var(--spacing-4);
+  }
+  
+  .bank-logo {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-lg);
+  }
+  
+  .bank-name {
+    font-size: var(--font-size-base);
+  }
+  
+  .bank-meta {
+    font-size: var(--font-size-xs);
+  }
+  
+  .bank-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Information Cards */
+  .info-card {
+    padding: var(--spacing-6);
+  }
+  
+  .info-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .info-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .info-item {
+    padding: var(--spacing-2);
+  }
+  
+  .governance-item,
+  .financial-item,
+  .service-item {
+    padding: var(--spacing-3);
+  }
+  
+  /* Footer */
+  .footer-content {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .footer-logo-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .footer-description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .footer-column-title {
+    font-size: var(--font-size-xs);
+  }
+  
+  .footer-column-links li a {
+    font-size: var(--font-size-xs);
+  }
+  
+  .regulatory-item {
+    padding: var(--spacing-3);
+  }
+  
+  .disclaimer {
+    padding: var(--spacing-4);
+  }
+  
+  .disclaimer-text {
+    font-size: var(--font-size-xs);
+  }
+  
+  .footer-bottom {
+    padding: var(--spacing-4) 0;
+  }
+  
+  .copyright,
+  .legal-links a,
+  .market-status span {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Large Screen Styles (1200px and above) */
+@media (min-width: 1200px) {
+  /* Hero Section */
+  .title-line-1,
+  .title-line-2 {
+    font-size: var(--font-size-8xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+  }
+  
+  /* Content Grid */
+  .content-grid {
+    gap: var(--spacing-20);
+  }
+  
+  /* Bank Cards */
+  .bank-cards {
+    gap: var(--spacing-6);
+  }
+  
+  .bank-link {
+    padding: var(--spacing-8);
+  }
+  
+  /* Information Cards */
+  .info-card {
+    padding: var(--spacing-10);
+  }
+  
+  /* Footer */
+  .footer-content {
+    gap: var(--spacing-16);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp rendering on high DPI displays */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .particle,
+  .mouse-follower,
+  .ambient-light-1,
+  .ambient-light-2,
+  .grid-animated {
+    animation: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .navbar,
+  .footer,
+  .background-wrapper,
+  .luxury-particles,
+  .hero-decorations {
+    display: none !important;
+  }
+  
+  .hero-section,
+  .main-content {
+    padding: var(--spacing-4) 0;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bank-link,
+  .info-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    margin-bottom: var(--spacing-4);
+  }
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: light) {
+  /* Override for users who prefer light mode */
+  :root {
+    --color-white: #000000;
+    --color-black: #ffffff;
+    --color-gray-900: #f9fafb;
+    --color-gray-800: #f3f4f6;
+    --color-gray-700: #e5e7eb;
+    --color-gray-600: #d1d5db;
+    --color-gray-500: #9ca3af;
+    --color-gray-400: #6b7280;
+    --color-gray-300: #4b5563;
+    --color-gray-200: #374151;
+    --color-gray-100: #1f2937;
+    --color-gray-50: #111827;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .nav-item:hover,
+  .bank-link:hover,
+  .info-card:hover,
+  .social-link:hover {
+    transform: none;
+  }
+  
+  /* Increase touch targets */
+  .nav-item,
+  .bank-link,
+  .social-link,
+  .cta-button,
+  .meeting-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Simplify animations on touch devices */
+  .stat-card,
+  .bank-card,
+  .info-card {
+    animation-duration: 0.3s;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-contrast: high) {
+  :root {
+    --color-blue-400: #2563eb;
+    --color-blue-500: #1d4ed8;
+    --color-gray-300: #374151;
+    --color-gray-400: #1f2937;
+  }
+  
+  .bank-link,
+  .info-card {
+    border-width: 2px;
+  }
+  
+  .nav-item::after {
+    height: 3px;
+  }
+}
+
+/* Focus Visible Support */
+.nav-item:focus-visible,
+.bank-link:focus-visible,
+.cta-button:focus-visible,
+.meeting-button:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid var(--color-blue-500);
+  outline-offset: 2px;
+}
+
+/* Custom Scroll Behavior */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Container Query Support */
+@supports (container-type: inline-size) {
+  .content-grid {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 600px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
